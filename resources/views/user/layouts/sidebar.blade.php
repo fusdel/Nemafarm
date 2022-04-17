@@ -1,11 +1,15 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('user')}}">
-      <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
+      <div class="sidebar-brand-icon">
+      @if(Auth()->user()->photo)
+            <img  alt="Generic placeholder image" class="img-fluid" style="width: 60px; border-radius: 10px;" src="{{Auth()->user()->photo}}">
+          @else
+            <img class="img-profile  rounded-circle col-md-10"  src="{{asset('backend/img/avatar.png')}}">
+          @endif
+          <div class="sidebar-brand-text mr-6">User</div>
       </div>
-      <div class="sidebar-brand-text mx-3">User</div>
     </a>
 
     <!-- Divider -->
@@ -25,13 +29,6 @@
         <div class="sidebar-heading">
             Shop
         </div>
-    <!--Orders -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('user.order.index')}}">
-            <i class="fas fa-hammer fa-chart-area"></i>
-            <span>Orders</span>
-        </a>
-    </li>
 
     <!-- Reviews -->
     <li class="nav-item">
