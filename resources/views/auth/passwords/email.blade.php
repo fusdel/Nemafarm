@@ -6,7 +6,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-light">
 
   <div class="container">
 
@@ -19,7 +19,13 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
+              <div style="display: flex;align-items:center;justify-content:center" class="col-lg-6">
+                @php
+                $settings=DB::table('settings')->get();
+            @endphp
+            <a href="{{route('home')}}"><img width="300px" height="300px" src="@foreach($settings as $data) {{$data->logo}} @endforeach" alt="logo"></a>
+
+              </div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">

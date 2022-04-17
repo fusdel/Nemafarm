@@ -7,7 +7,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-light">
 
   <div class="container">
 
@@ -16,16 +16,25 @@
 
       <div class="col-xl-10 col-lg-12 col-md-9 mt-5">
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card o-hidden border-4 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              
+                <div class="col-lg-12">
+                    <div class="text-center pt-4">
+                      <h1 class="h2 text-gray-700 mb-1">Welcome Back!</h1>
+                    </div>
+                </div>
+
+              <div style="display: flex;align-items:center;justify-content:center" class="col-lg-6">
+                @php
+                    $settings=DB::table('settings')->get();
+                @endphp
+                <a href="{{route('home')}}"><img width="300px" height="300px" src="@foreach($settings as $data) {{$data->logo}} @endforeach" alt="logo"></a>
+
+          </div>
               <div class="col-lg-6">
                 <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                  </div>
                   <form class="user"  method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
@@ -43,7 +52,7 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    
+
                     </div>
                     <div class="form-group">
                         <div class="form-check">
@@ -59,7 +68,7 @@
                     </button>
                   </form>
                   <hr>
-                   
+
                   <div class="text-center">
                     @if (Route::has('password.request'))
                         <a class="btn btn-link small" href="{{ route('password.request') }}">
