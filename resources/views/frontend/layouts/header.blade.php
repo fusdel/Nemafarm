@@ -14,7 +14,7 @@
                     <!-- Top Right -->
                     <div class="right-content">
                         <ul class="list-main">
-                        <li><i class="ti-location-pin"></i> <a href="{{route('order.track')}}">Track Order</a></li>
+                        {{-- <li><i class="ti-location-pin"></i> <a href="{{route('order.track')}}">Track Order</a></li> --}}
                             {{-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li> --}}
                             @auth 
                                 @if(Auth::user()->role=='admin')
@@ -95,7 +95,8 @@
                                     @endphp
                                 @endforeach
                            @endif
-                            <a href="{{route('wishlist')}}" class="single-icon"><i class="fa fa-heart-o"></i> <span class="total-count">{{Helper::wishlistCount()}}</span></a>
+                            <a href="{{route('wishlist')}}" class="single-icon">
+                                <i class="fa fa-heart-o"></i> <span class="total-count">{{Helper::wishlistCount()}}</span></a>
                             <!-- Shopping Item -->
                             @auth
                                 <div class="shopping-item">

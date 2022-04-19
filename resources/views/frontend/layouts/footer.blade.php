@@ -9,7 +9,10 @@
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="{{asset('backend/img/logo2.png')}}" alt="#"></a>
+								<a href="{{route('home')}}">
+									{{-- <img src="{{asset('backend/img/logo2.png')}}" alt="#"> --}}
+									<h3 style="color: white">Nema Farms</h3>
+								</a>
 							</div>
 							@php
 								$settings=DB::table('settings')->get();
@@ -25,10 +28,9 @@
 							<h4>Information</h4>
 							<ul>
 								<li><a href="{{route('about-us')}}">About Us</a></li>
-								<li><a href="#">Faq</a></li>
-								<li><a href="#">Terms & Conditions</a></li>
+								
 								<li><a href="{{route('contact')}}">Contact Us</a></li>
-								<li><a href="#">Help</a></li>
+								
 							</ul>
 						</div>
 						<!-- End Single Widget -->
@@ -60,7 +62,7 @@
 								</ul>
 							</div>
 							<!-- End Single Widget -->
-							<div class="sharethis-inline-follow-buttons"></div>
+							{{-- <div class="sharethis-inline-follow-buttons"></div> --}}
 						</div>
 						<!-- End Single Widget -->
 					</div>
@@ -72,16 +74,16 @@
 			<div class="container">
 				<div class="inner">
 					<div class="row">
-						<div class="col-lg-6 col-12">
-							<div class="left">
+						<div class="col-12">
+							<div class="d-flex justify-content-center text-center">
 								<p>Copyright © {{date('Y')}} Nema Farms.All Rights Reserved.</p>
 							</div>
 						</div>
-						<div class="col-lg-6 col-12">
+						{{-- <div class="col-lg-6 col-12">
 							<div class="right">
 								<img src="{{asset('backend/img/payments.png')}}" alt="#">
 							</div>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>
