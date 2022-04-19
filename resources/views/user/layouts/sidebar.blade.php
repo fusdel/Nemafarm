@@ -6,7 +6,7 @@
       @if(Auth()->user()->photo)
             <img  alt="Generic placeholder image" class="img-fluid" style="width: 60px; border-radius: 10px;" src="{{Auth()->user()->photo}}">
           @else
-            <img class="img-profile  rounded-circle col-md-10"  src="{{asset('backend/img/avatar.png')}}">
+            <img class="img-profile  rounded-circle col-md-6"  src="{{asset('backend/img/avatar.png')}}">
           @endif
           <div class="sidebar-brand-text mr-6">User</div>
       </div>
