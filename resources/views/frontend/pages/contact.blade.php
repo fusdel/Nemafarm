@@ -30,7 +30,7 @@
 										$settings=DB::table('settings')->get();
 									@endphp
 									<h4>Get in touch</h4>
-									<h3>Write us a message @auth @else<span style="font-size:12px;" class="text-danger">[You need to login first]</span>@endauth</h3>
+									<h3>Write us a message</h3>
 								</div>
 								<form class="form-contact form contact_form" method="post" action="{{route('contact.store')}}" id="contactForm" novalidate="novalidate">
 									@csrf
@@ -112,10 +112,7 @@
 		</div>
 	</div>
 	<!--/ End Map Section -->
-	
-	<!-- Start Shop Newsletter  -->
-	@include('frontend.layouts.newsletter')
-	<!-- End Shop Newsletter -->
+
 	<!--================Contact Success  =================-->
 	<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
