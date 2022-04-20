@@ -17,7 +17,7 @@
 		</div>
 	</div>
 	<!-- End Breadcrumbs -->
-  
+
 	<!-- Start Contact -->
 	<section id="contact-us" class="contact-us section">
 		<div class="container">
@@ -51,13 +51,13 @@
 											<div class="form-group">
 												<label>Your Email<span>*</span></label>
 												<input name="email" type="email" id="email" placeholder="Enter email address">
-											</div>	
+											</div>
 										</div>
 										<div class="col-lg-6 col-12">
 											<div class="form-group">
 												<label>Your Phone<span>*</span></label>
 												<input id="phone" name="phone" type="number" placeholder="Enter your phone">
-											</div>	
+											</div>
 										</div>
 										<div class="col-12">
 											<div class="form-group message">
@@ -104,7 +104,7 @@
 			</div>
 	</section>
 	<!--/ End Contact -->
-	
+
 	<!-- Map Section -->
 	<div class="map-section">
 		<div id="myMap">
@@ -129,7 +129,7 @@
 		  </div>
 		</div>
 	</div>
-	
+
 	<!-- Modals error -->
 	<div class="modal fade" id="error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -141,7 +141,12 @@
 				</button>
 			</div>
 			<div class="modal-body">
+                @auth
 				<p class="text-warning">Something went wrong.</p>
+                @else
+                <p class="text-warning">You aren't logged in.</p>
+                You need to <a href="{{route('login.form')}}" style="color:rgb(54, 54, 204)">Login</a> OR <a style="color:blue" href="{{route('register.form')}}">Register</a> for comment.
+                @endauth
 			</div>
 		  </div>
 		</div>
