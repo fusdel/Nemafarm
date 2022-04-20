@@ -45,7 +45,7 @@ class MessageController extends Controller
             'email'=>'email|required',
             'message'=>'required|min:20|max:200',
             'subject'=>'string|required',
-            'phone'=>'numeric|required'
+            'phone'=>'numeric|required|min:6|max:50'
         ]);
         // return $request->all();
 
