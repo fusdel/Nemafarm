@@ -41,14 +41,14 @@
     <div class="container-fluid">
         <div class="row">
             @php
-            $category_lists=DB::table('categories')->where('status','active')->limit(3)->get();
+            $category_lists=DB::table('categories')->where('status','active')->where('is_parent',1)->limit(3)->get();
             @endphp
             @if($category_lists)
                 @foreach($category_lists as $cat)
-                    @if($cat->is_parent==1)
                         <!-- Single Banner  -->
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class={{(count($category_lists) === 1) ? 'col-12' :  (count($category_lists) === 2 ? 'col-6' : 'col-4' )}}>
                             <div class="single-banner">
+
                                 @if($cat->photo)
                                     <img src="{{$cat->photo}}" alt="{{$cat->photo}}">
                                 @else
@@ -60,7 +60,6 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
                     <!-- /End Single Banner  -->
                 @endforeach
             @endif

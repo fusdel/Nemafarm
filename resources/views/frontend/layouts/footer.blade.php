@@ -28,9 +28,11 @@
 							<h4>Information</h4>
 							<ul>
 								<li><a href="{{route('about-us')}}">About Us</a></li>
-								
+
 								<li><a href="{{route('contact')}}">Contact Us</a></li>
-								
+
+								<li><a href="#">Privacy Policy</a></li>
+
 							</ul>
 						</div>
 						<!-- End Single Widget -->
@@ -42,9 +44,7 @@
 							<ul>
 								<li><a href="#">Payment Methods</a></li>
 								<li><a href="#">Money-back</a></li>
-								<li><a href="#">Returns</a></li>
 								<li><a href="#">Shipping</a></li>
-								<li><a href="#">Privacy Policy</a></li>
 							</ul>
 						</div>
 						<!-- End Single Widget -->
@@ -90,7 +90,7 @@
 		</div>
 	</footer>
 	<!-- /End Footer Area -->
- 
+
 	<!-- Jquery -->
     <script src="{{asset('frontend/js/jquery.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery-migrate-3.0.0.js')}}"></script>
@@ -127,7 +127,7 @@
 	<!-- Active JS -->
 	<script src="{{asset('frontend/js/active.js')}}"></script>
 
-	
+
 	@stack('scripts')
 	<script>
 		setTimeout(function(){
