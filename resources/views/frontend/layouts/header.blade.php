@@ -179,7 +179,7 @@
                     <div class="col-lg-12 col-12">
                         <div class="menu-area">
                             <!-- Main Menu -->
-                            <nav class="navbar navbar-expand-lg">
+                            <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm ">
                                 <div class="navbar-collapse">	
                                     <div class="nav-inner">	
                                         <ul class="nav main-menu menu navbar-nav">
