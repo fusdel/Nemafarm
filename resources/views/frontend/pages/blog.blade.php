@@ -19,26 +19,26 @@
         </div>
     </div>
     <!-- End Breadcrumbs -->
-        
+
     <!-- Start Blog Single -->
     <section class="blog-single shop-blog grid section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-12">
                     <div class="row">
-                        @foreach($posts as $post)
+                        @forelse($posts as $post)
                         {{-- {{$post}} --}}
                             <div class="col-lg-6 col-md-6 col-12">
                                 <!-- Start Single Blog  -->
                                 <div class="shop-single-blog">
                                 <img src="{{$post->photo}}" alt="{{$post->photo}}">
                                     <div class="content">
-                                        @php 
+                                        @php
                                             $author_info=DB::table('users')->select('name')->where('id',$post->added_by)->get();
                                         @endphp
                                         <p class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{$post->created_at->format('d M, Y. D')}}
                                             <span class="float-right">
-                                                <i class="fa fa-user" aria-hidden="true"></i> 
+                                                <i class="fa fa-user" aria-hidden="true"></i>
                                                 @foreach($author_info as $data)
                                                     @if($data->name)
                                                         {{$data->name}}
@@ -55,7 +55,11 @@
                                 </div>
                                 <!-- End Single Blog  -->
                             </div>
-                        @endforeach
+                            @empty
+                            <div class="col-12">
+                                    <h6>No Blogs</h6>
+                            </div>
+                        @endforelse
                         <div class="col-12">
                             <!-- Pagination -->
                             {{-- {{$posts->appends($_GET)->links()}} --}}
@@ -78,7 +82,7 @@
                             <h3 class="title">Blog Categories</h3>
                             <ul class="categor-list">
                                 @if(!empty($_GET['category']))
-                                    @php 
+                                    @php
                                         $filter_cats=explode(',',$_GET['category']);
                                     @endphp
                                 @endif
@@ -91,7 +95,7 @@
                                     </li>
                                     @endforeach
                                 </form>
-                                
+
                             </ul>
                         </div>
                         <!--/ End Single Widget -->
@@ -107,11 +111,11 @@
                                     <div class="content">
                                         <h5><a href="#">{{$post->title}}</a></h5>
                                         <ul class="comment">
-                                        @php 
+                                        @php
                                             $author_info=DB::table('users')->select('name')->where('id',$post->added_by)->get();
                                         @endphp
                                             <li><i class="fa fa-calendar" aria-hidden="true"></i>{{$post->created_at->format('d M, y')}}</li>
-                                            <li><i class="fa fa-user" aria-hidden="true"></i> 
+                                            <li><i class="fa fa-user" aria-hidden="true"></i>
                                                 @foreach($author_info as $data)
                                                     @if($data->name)
                                                         {{$data->name}}
@@ -134,7 +138,7 @@
                             <h3 class="title">Tags</h3>
                             <ul class="tag">
                                 @if(!empty($_GET['tag']))
-                                    @php 
+                                    @php
                                         $filter_tags=explode(',',$_GET['tag']);
                                     @endphp
                                 @endif
@@ -152,17 +156,6 @@
                         </div>
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
-                        <div class="single-widget newsletter">
-                            <h3 class="title">Newslatter</h3>
-                            <div class="letter-inner">
-                                <h4>Subscribe & get news <br> latest updates.</h4>
-                                <form method="POST" action="{{route('subscribe')}}" class="form-inner">
-                                    @csrf
-                                    <input type="email" name="email" placeholder="Enter your email">
-                                    <button type="submit" class="btn " style="width: 100%">Submit</button>
-                                </form>
-                            </div>
-                        </div>
                         <!--/ End Single Widget -->
                     </div>
                 </div>

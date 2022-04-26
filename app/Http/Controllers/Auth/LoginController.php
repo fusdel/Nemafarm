@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Socialite;
 use App\User;
 use Auth;
+use Session;
 class LoginController extends Controller
 {
     /*
@@ -50,7 +51,7 @@ class LoginController extends Controller
         // dd($provider);
      return Socialite::driver($provider)->redirect();
     }
- 
+
     public function Callback($provider)
     {
         $userSocial =   Socialite::driver($provider)->stateless()->user();
@@ -58,6 +59,7 @@ class LoginController extends Controller
         // dd($users);
         if($users){
             Auth::login($users);
+            Session::put('user',$userSocial->getEmail());
             return redirect('/')->with('success','You are login from '.$provider);
         }else{
             $user = User::create([

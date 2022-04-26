@@ -43,12 +43,11 @@ class MessageController extends Controller
         $this->validate($request,[
             'name'=>'string|required|min:2',
             'email'=>'email|required',
-            'message'=>'required|min:20|max:200',
+            'message'=>'required|min:10|max:200',
             'subject'=>'string|required',
             'phone'=>'numeric|required'
         ]);
         // return $request->all();
-
         $message=Message::create($request->all());
             // return $message;
         $data=array();
@@ -60,7 +59,7 @@ class MessageController extends Controller
         $data['message']=$message->message;
         $data['subject']=$message->subject;
         $data['photo']=Auth()->user()->photo;
-        // return $data;    
+        // return $data;
         event(new MessageSent($data));
         exit();
     }
