@@ -145,7 +145,7 @@
                                                     $after_discount=($product->price-($product->price*$product->discount)/100);
                                                 @endphp
                                                 <span>${{number_format($after_discount,2)}}</span>
-                                                <del style="padding-left:4%;">${{number_format($product->price,2)}}</del>
+                                                <del style="padding-left:4%;">GMD{{number_format($product->price,2)}}</del>
                                             </div>
                                         </div>
                                     </div>
@@ -201,7 +201,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Hot Item</h2>
+                    <h2>Hot Items</h2>
                 </div>
             </div>
         </div>
@@ -239,7 +239,7 @@
                                     @php
                                     $after_discount=($product->price-($product->price*$product->discount)/100)
                                     @endphp
-                                    <span>${{number_format($after_discount,2)}}</span>
+                                    <span>GMD{{number_format($after_discount,2)}}</span>
                                 </div>
                             </div>
                         </div>
@@ -287,7 +287,7 @@
                                 <div class="col-lg-6 col-md-6 col-12 no-padding">
                                     <div class="content">
                                         <h4 class="title"><a href="#">{{$product->title}}</a></h4>
-                                        <p class="price with-discount">${{number_format($product->discount,2)}}</p>
+                                        <p class="price with-discount">GMD{{number_format($product->discount,2)}}</p>
                                     </div>
                                 </div>
                                 </div>
@@ -326,7 +326,7 @@
                                 @php
                                     $after_discount=($product->price-($product->price*$product->discount)/100)
                                 @endphp
-                                <h1 class="price">${{number_format($after_discount)}} <s>${{number_format($data->price)}}</s></h1>
+                                <h1 class="price">GMD{{number_format($after_discount)}} <s>GMD{{number_format($data->price)}}</s></h1>
                                 <div class="coming-time">
                                     <div class="clearfix" data-countdown="2021/02/30"></div>
                                 </div>
@@ -381,7 +381,7 @@
                 <div  class="single-service">
                     <i class="ti-rocket"></i>
                     <h4>Free shiping</h4>
-                    <p>Orders over $100</p>
+                    <p>Orders over GMD100</p>
                 </div>
                 <!-- End Single Service -->
             </div>
