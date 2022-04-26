@@ -74,7 +74,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Trending Item</h2>
+                        <h2>Trending Items</h2>
                     </div>
                 </div>
             </div>
@@ -89,12 +89,12 @@
                                     // dd($categories);
                                 @endphp
                                 @if($categories)
-                                <button class="btn" style="background:black"data-filter="*">
+                                <button class="btn mt-1" style="background:black"data-filter="*">
                                     All Products
                                 </button>
                                     @foreach($categories as $key=>$cat)
 
-                                    <button class="btn" style="background:none;color:black;"data-filter=".{{$cat->id}}">
+                                    <button class="btn mt-1" style="background:none;color:black;"data-filter=".{{$cat->id}}">
                                         {{$cat->title}}
                                     </button>
                                     @endforeach
