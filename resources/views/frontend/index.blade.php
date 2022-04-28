@@ -351,11 +351,12 @@
         </div>
         <div class="row">
             @if($posts)
+            @if(count($posts) === 1)
+            <div class="col-lg-3 col-md-3 col-12">
+            </div>
                 @foreach($posts as $post)
-                    <div
-                    class={{(count($posts) === 1) ? 'col-12' :  (count($posts) === 2 ? 'col-6' : 'col-lg-4 col-md-12 col-12' )}}
-                    {{-- class="col-lg-3 col-md-6 col-12" --}}
-                    >
+
+                    <div class="col-lg-6 col-md-6 col-12">
                         <!-- Start Single Blog  -->
                         <div class="shop-single-blog">
                             <img src="{{$post->photo}}" alt="{{$post->photo}}">
@@ -368,6 +369,45 @@
                         <!-- End Single Blog  -->
                     </div>
                 @endforeach
+                <div class="col-lg-3 col-md-3 col-12">
+                </div>
+                @elseif(count($posts) === 2)
+                <div class="col-lg-4 col-md-4 col-12">
+                </div>
+                    @foreach($posts as $post)
+
+                        <div class="col-lg-2 col-md-6 col-12">
+                            <!-- Start Single Blog  -->
+                            <div class="shop-single-blog">
+                                <img src="{{$post->photo}}" alt="{{$post->photo}}">
+                                <div class="content">
+                                    <p class="date">{{$post->created_at->format('d M , Y. D')}}</p>
+                                    <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>
+                                    <a href="{{route('blog.detail',$post->slug)}}" class="more-btn">Continue Reading</a>
+                                </div>
+                            </div>
+                            <!-- End Single Blog  -->
+                        </div>
+                    @endforeach
+                    <div class="col-lg-4 col-md-4 col-12">
+                    </div>
+                @else
+                    @foreach($posts as $post)
+
+                        <div class="col-lg-4 col-md-4 col-4">
+                            <!-- Start Single Blog  -->
+                            <div class="shop-single-blog">
+                                <img src="{{$post->photo}}" alt="{{$post->photo}}">
+                                <div class="content">
+                                    <p class="date">{{$post->created_at->format('d M , Y. D')}}</p>
+                                    <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>
+                                    <a href="{{route('blog.detail',$post->slug)}}" class="more-btn">Continue Reading</a>
+                                </div>
+                            </div>
+                            <!-- End Single Blog  -->
+                        </div>
+                    @endforeach
+                @endif
             @endif
 
         </div>
