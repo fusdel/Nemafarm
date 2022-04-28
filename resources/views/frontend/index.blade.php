@@ -372,11 +372,11 @@
                 <div class="col-lg-3 col-md-3 col-12">
                 </div>
                 @elseif(count($posts) === 2)
-                <div class="col-lg-4 col-md-4 col-12">
+                <div class="col-lg-2 col-md-1 col-12">
                 </div>
                     @foreach($posts as $post)
 
-                        <div class="col-lg-2 col-md-6 col-12">
+                        <div class="col-lg-4 col-md-5 col-12">
                             <!-- Start Single Blog  -->
                             <div class="shop-single-blog">
                                 <img src="{{$post->photo}}" alt="{{$post->photo}}">
@@ -389,7 +389,7 @@
                             <!-- End Single Blog  -->
                         </div>
                     @endforeach
-                    <div class="col-lg-4 col-md-4 col-12">
+                    <div class="col-lg-2 col-md-1 col-12">
                     </div>
                 @else
                     @foreach($posts as $post)
