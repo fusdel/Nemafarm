@@ -353,7 +353,7 @@
             @if($posts)
                 @foreach($posts as $post)
                     <div
-                    class={{(count($category_lists) === 1) ? 'col-12' :  (count($category_lists) === 2 ? 'col-6' : 'col-lg-4 col-md-12 col-12' )}}
+                    class={{(count($posts) === 1) ? 'col-12' :  (count($posts) === 2 ? 'col-6' : 'col-lg-4 col-md-12 col-12' )}}
                     {{-- class="col-lg-3 col-md-6 col-12" --}}
                     >
                         <!-- Start Single Blog  -->
