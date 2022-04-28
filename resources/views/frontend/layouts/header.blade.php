@@ -179,15 +179,9 @@
                     <div class="col-lg-12 col-12">
                         <div class="menu-area">
                             <!-- Main Menu -->
-<<<<<<< HEAD
-                            <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm ">
-                                <div class="navbar-collapse">	
-                                    <div class="nav-inner">	
-=======
                             <nav class="navbar navbar-expand-lg">
                                 <div class="navbar-collapse">
                                     <div class="nav-inner">
->>>>>>> 99343abaf57d8ce3ac8d344b11d0e2c87317bd17
                                         <ul class="nav main-menu menu navbar-nav">
                                             <li class="{{Request::path()=='home' ? 'active' : ''}}"><a href="{{route('home')}}">Home</a></li>
                                             <li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">About Us</a></li>
